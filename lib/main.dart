@@ -1,8 +1,23 @@
+import 'dart:io';
+
 import 'package:app_store/views/buyers/main_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  Platform.isAndroid
+      ? await Firebase.initializeApp(
+          options: const FirebaseOptions(
+              apiKey: "AIzaSyDUMxyyqqcevlfzRRPQ70MgC-3SLoQOttA",
+              appId: "1:65116904318:android:7829bf1498b45fa424712f",
+              messagingSenderId: "65116904318",
+              projectId: "store-f6c88",
+              storageBucket: "gs://store-f6c88.appspot.com"),
+              )
+      : await Firebase.initializeApp();
   runApp(const MyApp());
 }
 

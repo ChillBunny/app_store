@@ -1,3 +1,9 @@
+import 'package:app_store/views/buyers/nav_screens/account_screen.dart';
+import 'package:app_store/views/buyers/nav_screens/cart_screen.dart';
+import 'package:app_store/views/buyers/nav_screens/category_screen.dart';
+import 'package:app_store/views/buyers/nav_screens/home_screen.dart';
+import 'package:app_store/views/buyers/nav_screens/search_screen.dart';
+import 'package:app_store/views/buyers/nav_screens/store_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -9,10 +15,31 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  int _pageIndex = 0;
+  final List<Widget> _pages = [
+    const HomeScreen(),
+    const CategoryScreen(),
+    const StoreScreen(),
+    const CartScreen(),
+    const SearchScreen(), 
+    const AccountScreen(),
+
+  ];
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+
+          currentIndex: _pageIndex,
+          onTap: (value){
+            setState(
+              () {
+            _pageIndex = value;
+            }
+            );
+          },
+
           unselectedItemColor: Colors.black,
           selectedItemColor: Colors.yellow.shade900,
           items: [
@@ -40,7 +67,9 @@ class _MainScreenState extends State<MainScreen> {
               icon: SvgPicture.asset('assets/icons/account.svg'),
               label: 'ACCOUNT',
             ),
-          ]),
+          ]
+          ),
+          body: _pages[_pageIndex],
     );
   }
 }
