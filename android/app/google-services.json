@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "65116904318",
+    "project_id": "store-f6c88",
+    "storage_bucket": "store-f6c88.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65116904318:android:7829bf1498b45fa424712f",
+        "android_client_info": {
+          "package_name": "com.mac.app_store"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUMxyyqqcevlfzRRPQ70MgC-3SLoQOttA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

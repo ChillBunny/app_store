@@ -21,25 +21,19 @@ class _MainScreenState extends State<MainScreen> {
     const CategoryScreen(),
     const StoreScreen(),
     const CartScreen(),
-    const SearchScreen(), 
+    const SearchScreen(),
     const AccountScreen(),
-
   ];
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-
           currentIndex: _pageIndex,
-          onTap: (value){
-            setState(
-              () {
-            _pageIndex = value;
-            }
-            );
+          onTap: (value) {
+            setState(() {
+              _pageIndex = value;
+            });
           },
-
           unselectedItemColor: Colors.black,
           selectedItemColor: Colors.yellow.shade900,
           items: [
@@ -67,9 +61,8 @@ class _MainScreenState extends State<MainScreen> {
               icon: SvgPicture.asset('assets/icons/account.svg'),
               label: 'ACCOUNT',
             ),
-          ]
-          ),
-          body: _pages[_pageIndex],
+          ]),
+      body: _pages[_pageIndex],
     );
   }
 }
