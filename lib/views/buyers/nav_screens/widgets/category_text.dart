@@ -22,7 +22,7 @@ class CategoryText extends StatelessWidget {
             'Categories',
             style: TextStyle(fontSize: 19),
           ),
-          Container(
+          SizedBox(
             height: 40,
             child: Row(
               children: [
