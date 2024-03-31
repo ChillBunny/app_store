@@ -19,7 +19,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
   late String password;
 
+  bool _isLoading = false;
+
   _loginUsers() async {
+    setState(() {
+      _isLoading = true;
+    });
     if (_formKey.currentState!.validate()) {
       await _authController.loginUsers(email, password);
 
@@ -28,6 +33,9 @@ class _LoginScreenState extends State<LoginScreen> {
         return const MainScreen();
       }));
     } else {
+      setState(() {
+        _isLoading = false;
+      });
       return showSnack(context, 'Please fields most not be empty');
     }
   }
@@ -92,11 +100,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: BoxDecoration(
                       color: Colors.yellow.shade900,
                       borderRadius: BorderRadius.circular(10)),
-                  child: const Center(
-                    child: Text(
-                      'Login',
-                      style: TextStyle(letterSpacing: 3, color: Colors.white),
-                    ),
+                  child: Center(
+                    child: _isLoading
+                        ? const CircularProgressIndicator(color: Colors.white)
+                        : const Text(
+                            'Login',
+                            style: TextStyle(
+                                letterSpacing: 3, color: Colors.white),
+                          ),
                   ),
                 ),
               ),

@@ -1,6 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:shimmer_animation/shimmer_animation.dart';
 
 class BannerWidget extends StatefulWidget {
   const BannerWidget({super.key});
@@ -45,7 +47,32 @@ class _BannerWidgetState extends State<BannerWidget> {
         child: PageView.builder(
           itemCount: _bannerImage.length,
           itemBuilder: (context, index) {
-            return Image.network(_bannerImage[index], fit: BoxFit.cover);
+            return ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: CachedNetworkImage(
+                imageUrl: _bannerImage[index],
+                fit: BoxFit.cover,
+                placeholder: (context, url) => Shimmer(
+                  // This is the ONLY required parameter
+                  duration: const Duration(seconds: 3),
+                  // This is NOT the default value. Default value: Duration(seconds: 0)
+                  interval: const Duration(seconds: 5),
+                  // This is the default value
+                  color: Colors.white,
+                  // This is the default value
+                  colorOpacity: 0.3,
+                  // This is the default value
+                  enabled: true,
+                  // This is the default value
+                  direction: const ShimmerDirection.fromLTRB(),
+                  // This is the ONLY required parameter
+                  child: Container(
+                    color: Colors.yellow.shade900,
+                  ),
+                ),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
+              ),
+            );
           },
         ),
       ),
