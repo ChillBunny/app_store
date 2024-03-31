@@ -36,7 +36,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     });
     if (_formKey.currentState!.validate()) {
       await _authController
-          .signUpUsers(email, fullName, phoneNumber, password)
+          .signUpUsers(email, fullName, phoneNumber, password, _image)
           .whenComplete(() {
         setState(() {
           _formKey.currentState!.reset();
@@ -95,7 +95,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         : CircleAvatar(
                             radius: 64,
                             backgroundColor: Colors.yellow.shade900,
-                            backgroundImage: const NetworkImage(''),
+                            backgroundImage: const NetworkImage(
+                                'https://www.iprcenter.gov/image-repository/blank-profile-picture.png/@@images/image.png'),
                           ),
                     Positioned(
                       right: 10,
