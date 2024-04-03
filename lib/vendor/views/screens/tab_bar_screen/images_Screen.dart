@@ -11,6 +11,7 @@ class ImagesScreen extends StatefulWidget {
   @override
   State<ImagesScreen> createState() => _ImagesScreenState();
 }
+
 class _ImagesScreenState extends State<ImagesScreen>
     with AutomaticKeepAliveClientMixin {
   @override
@@ -71,7 +72,7 @@ class _ImagesScreenState extends State<ImagesScreen>
          if(_image.isNotEmpty)
           ElevatedButton(
             onPressed: () async {
-              EasyLoading.show(status: 'PLEASE WAIT');
+              //EasyLoading.show(status: 'PLEASE WAIT');
               for (var img in _image) {
                 Reference ref =
                     _storage.ref().child('productImages').child(const Uuid().v4());

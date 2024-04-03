@@ -2,7 +2,6 @@ import 'package:app_store/vendor/provider/product_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-
 class AttributesScreen extends StatefulWidget {
   @override
   State<AttributesScreen> createState() => _AttributesScreenState();
@@ -26,13 +25,13 @@ class _AttributesScreenState extends State<AttributesScreen>
       child: Column(
         children: [
           TextFormField(
-             validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter Product Brand';
-                } else {
-                  return null;
-                }
-              },
+            validator: (value) {
+              if (value!.isEmpty) {
+                return 'Enter Product Brand';
+              } else {
+                return null;
+              }
+            },
             onChanged: (value) {
               _productProvider.getFormData(brandName: value);
             },
@@ -94,7 +93,6 @@ class _AttributesScreenState extends State<AttributesScreen>
                             setState(() {
                               _sizeList.removeAt(index);
                             });
-
                             _productProvider.getFormData(sizeList: _sizeList);
                           },
                           child: Container(

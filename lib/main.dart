@@ -3,11 +3,11 @@ import 'package:app_store/vendor/provider/product_provider.dart';
 import 'package:app_store/vendor/views/screens/main_vendor_screen.dart';
 import 'package:app_store/views/buyers/auth/login_screen.dart';
 import 'package:app_store/views/buyers/main_screen.dart';
+import 'package:app_store/views/buyers/nav_screens/home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Platform.isAndroid
@@ -37,6 +37,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const MainVendorScreen());
+        home: const MainScreen());
   }
 }

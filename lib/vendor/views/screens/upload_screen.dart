@@ -16,7 +16,7 @@ class UploadScreen extends StatelessWidget {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   UploadScreen({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     final ProductProvider _productProvider =
@@ -46,20 +46,29 @@ class UploadScreen extends StatelessWidget {
             const GeneralScreen(),
             ShippingScreen(),
             AttributesScreen(),
-            ImagesScreen(),
+            const ImagesScreen(),
           ]),
         ),
         bottomSheet: Padding(
           padding: const EdgeInsets.all(15.0),
           child: InkWell(
             onTap: () async {
+              /*
+              if(_formKey.currentState!.validate()){
+                final productId = Uuid().v4();
+                await _firestore.collection('products').doc(productId).set({
+                  'productId':productId,
+                  'productName':_productProvider.productData['productName'],
+                  'productPrice':_productProvider.productData['productPrice'],
+                  'quantity':_productProvider.productData['quantity'],
+                  'category':_productProvider.productData['category'],
+                  'description':_productProvider.productData['description'],
+                  'imageUrl': _productProvider.productData['imageUrlList'],
+                });
+              }
+              */
               
-              print(_productProvider.productData['productName']);
-              print(_productProvider.productData['productPrice']);
-              print(_productProvider.productData['quantity']);
-              print(_productProvider.productData['category']);
-              print(_productProvider.productData['description']);
-
+              ///*
               DocumentSnapshot userDoc = await _firestore
                   .collection('vendors')
                   .doc(_auth.currentUser!.uid)
@@ -71,7 +80,7 @@ class UploadScreen extends StatelessWidget {
                   'productId': productId,
                   'productName': _productProvider.productData['productName'],
                   'productPrice': _productProvider.productData['productPrice'],
-                  'productQuantity':
+                  'productQuantity': 
                       _productProvider.productData['productQuantity'],
                   'category': _productProvider.productData['category'],
                   'description': _productProvider.productData['description'],
@@ -93,13 +102,16 @@ class UploadScreen extends StatelessWidget {
                   'stateValue':
                       (userDoc.data() as Map<String, dynamic>)['stateValue'],
                   'vendorId': _auth.currentUser!.uid,
+
                 }).whenComplete(() {
                   EasyLoading.dismiss();
                   _productProvider.clearData();
+                  
                 });
               } else {
                 print('Not Valid');
               }
+              //*/
             },
             child: Container(
               height: 50,
