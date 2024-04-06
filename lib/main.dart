@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:app_store/provider/cart_provider.dart';
 import 'package:app_store/vendor/provider/product_provider.dart';
 import 'package:app_store/vendor/views/screens/main_vendor_screen.dart';
 import 'package:app_store/views/buyers/auth/login_screen.dart';
@@ -8,6 +9,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Platform.isAndroid
@@ -20,7 +22,14 @@ void main() async {
               storageBucket: "gs://store-f6c88.appspot.com"),
         )
       : await Firebase.initializeApp();
-  runApp(MultiProvider(providers:[ChangeNotifierProvider(create: (_){return ProductProvider();})],child:  const MyApp()));
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (_) {
+      return ProductProvider();
+    }),
+    ChangeNotifierProvider(create: (_) {
+      return CartProvider();
+    })
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -37,6 +46,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const MainScreen());
+        home: const LoginScreen());
   }
 }

@@ -1,4 +1,6 @@
 import 'package:app_store/views/buyers/nav_screens/category_screen.dart';
+import 'package:app_store/views/buyers/nav_screens/widgets/home_products.dart';
+import 'package:app_store/views/buyers/nav_screens/widgets/main_products_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -50,7 +52,9 @@ class _CategoryTextState extends State<CategoryText> {
                         itemCount: snapshot.data!.docs.length,
                         itemBuilder: (context, index) {
                           final categoryData = snapshot.data!.docs[index];
-                          return  ActionChip(
+                          return Row(
+                            children: [
+                              ActionChip(
                                 backgroundColor: Colors.yellow.shade900,
                                 onPressed: () {
                                   setState(() {
@@ -59,16 +63,19 @@ class _CategoryTextState extends State<CategoryText> {
                                   });
                                   print(_selectedCategory);
                                 },
-                                label: Center(
-                                  child: Text(
-                                    categoryData['categoryName'],
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                label: Text(
+                                  categoryData['categoryName'],
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
+                              ),
+                              SizedBox(
+                                width: 02,
+                              )
+                            ],
                           );
                         },
                       ),
@@ -87,9 +94,9 @@ class _CategoryTextState extends State<CategoryText> {
               );
             },
           ),
-          /*if (_selectedCategory == null) MainProductsWidget(),
+          if (_selectedCategory == null) MainProductsWidget(),
           if (_selectedCategory != null)
-            HomeproductWidget(categoryName: _selectedCategory!),*/
+            HomeproductWidget(categoryName: _selectedCategory!),
         ],
       ),
     );
