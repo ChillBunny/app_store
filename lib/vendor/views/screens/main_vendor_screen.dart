@@ -1,6 +1,6 @@
 import 'package:app_store/vendor/views/screens/earnings_screen.dart';
 import 'package:app_store/vendor/views/screens/edit_product_screen.dart';
-import 'package:app_store/vendor/views/screens/logout_Screen.dart';
+import 'package:app_store/vendor/views/screens/vendor_logout_Screen.dart';
 import 'package:app_store/vendor/views/screens/upload_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +19,7 @@ class _MainVendorScreenState extends State<MainVendorScreen> {
     const EarningsScreen(),
     UploadScreen(),
     const EditProductScreen(),
-    LogoutScreen()
+    VendorLogoutScreen()
   ];
   @override
   Widget build(BuildContext context) {

@@ -1,8 +1,8 @@
 import 'package:app_store/vendor/provider/product_provider.dart';
-import 'package:app_store/vendor/views/screens/tab_bar_screen/attributes_Screen.dart';
-import 'package:app_store/vendor/views/screens/tab_bar_screen/general_Screen.dart';
-import 'package:app_store/vendor/views/screens/tab_bar_screen/images_Screen.dart';
-import 'package:app_store/vendor/views/screens/tab_bar_screen/shipping_Screen.dart';
+import 'package:app_store/vendor/views/screens/upload_bar_screen/attributes_Screen.dart';
+import 'package:app_store/vendor/views/screens/upload_bar_screen/general_Screen.dart';
+import 'package:app_store/vendor/views/screens/upload_bar_screen/images_Screen.dart';
+import 'package:app_store/vendor/views/screens/upload_bar_screen/shipping_Screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -54,7 +54,7 @@ class UploadScreen extends StatelessWidget {
           child: InkWell(
             onTap: () async {
               if (_formKey.currentState!.validate()) {
-                final productId = Uuid().v4();
+                final productId = const Uuid().v4();
                 await _firestore.collection('products').doc(productId).set({
                   'productId': productId,
                   'productName': _productProvider.productData['productName'],

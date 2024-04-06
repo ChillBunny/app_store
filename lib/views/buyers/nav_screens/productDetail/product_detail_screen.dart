@@ -2,7 +2,6 @@ import 'package:app_store/provider/cart_provider.dart';
 import 'package:app_store/utils/show_snackBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:photo_view/photo_view.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';

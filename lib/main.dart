@@ -23,6 +23,7 @@ void main() async {
               storageBucket: "gs://store-f6c88.appspot.com"),
         )
       : await Firebase.initializeApp();
+      
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (_) {
       return ProductProvider();
@@ -47,6 +48,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const MainVendorScreen());
+        home: const VendorAuthScreen());
   }
 }

@@ -1,4 +1,5 @@
 import 'package:app_store/views/buyers/auth/login_screen.dart';
+import 'package:app_store/views/buyers/inner_screens/customer_order_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -201,8 +202,8 @@ class AccountScreen extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                            return const LoginScreen();
-                            //CustomerOrderScreen();
+                            return 
+                            CustomerOrderScreen();
                           }));
                         },
                         leading: const Icon(CupertinoIcons.shopping_cart),
