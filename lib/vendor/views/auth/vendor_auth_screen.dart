@@ -21,7 +21,7 @@ class VendorAuthScreen extends StatelessWidget {
         }
 
         // Render your application if authenticated
-        return const LandingScreen();
+        return LandingScreen();
       },
     );
   }

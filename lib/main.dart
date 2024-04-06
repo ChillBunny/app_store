@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:app_store/provider/cart_provider.dart';
 import 'package:app_store/vendor/provider/product_provider.dart';
+import 'package:app_store/vendor/views/auth/vendor_auth_screen.dart';
 import 'package:app_store/vendor/views/screens/main_vendor_screen.dart';
 import 'package:app_store/views/buyers/auth/login_screen.dart';
 import 'package:app_store/views/buyers/main_screen.dart';
@@ -46,6 +47,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const LoginScreen());
+        home: const MainVendorScreen());
   }
 }

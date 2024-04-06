@@ -1,5 +1,5 @@
 import 'package:app_store/vendor/views/screens/earnings_screen.dart';
-import 'package:app_store/vendor/views/screens/edit_screen.dart';
+import 'package:app_store/vendor/views/screens/edit_product_screen.dart';
 import 'package:app_store/vendor/views/screens/logout_Screen.dart';
 import 'package:app_store/vendor/views/screens/upload_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -28,7 +28,7 @@ class _MainVendorScreenState extends State<MainVendorScreen> {
         currentIndex: _pageIndex,
         onTap: (value) {
           setState(() {
-            _pageIndex = value; 
+            _pageIndex = value;
           });
         },
         type: BottomNavigationBarType.fixed,
