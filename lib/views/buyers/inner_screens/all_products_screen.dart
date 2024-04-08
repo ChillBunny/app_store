@@ -39,6 +39,7 @@ class AllProductScreen extends StatelessWidget {
               child: CircularProgressIndicator(color: Colors.yellow.shade900),
             );
           }
+
           //print(snapshot.data!.size);
           return GridView.builder(
               itemCount: snapshot.data!.size,

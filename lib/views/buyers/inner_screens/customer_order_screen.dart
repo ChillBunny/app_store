@@ -74,7 +74,8 @@ class CustomerOrderScreen extends StatelessWidget {
                         'Amount' +
                             ' ' +
                             document['productPrice'].toStringAsFixed(2),
-                        style: const TextStyle(fontSize: 17, color: Colors.blue),
+                        style:
+                            const TextStyle(fontSize: 17, color: Colors.blue),
                       ),
                       subtitle: Text(
                         formatedDate(
@@ -146,7 +147,7 @@ class CustomerOrderScreen extends StatelessWidget {
                                   children: [
                                     Text(document['fullName']),
                                     Text(document['email']),
-                                    Text(document['address']),
+                                    //Text(document['address']),
                                   ],
                                 ),
                               )

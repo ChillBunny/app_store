@@ -20,9 +20,9 @@ class CartScreen extends StatelessWidget {
         title: const Text(
           'Cart Screen',
           style: TextStyle(
-            fontWeight: FontWeight.bold,
-            letterSpacing: 4,
-          ),
+              fontWeight: FontWeight.bold,
+              letterSpacing: 4,
+              color: Colors.white),
         ),
         actions: [
           IconButton(
@@ -31,6 +31,7 @@ class CartScreen extends StatelessWidget {
             },
             icon: const Icon(
               CupertinoIcons.delete,
+              color: Colors.white,
             ),
           ),
         ],

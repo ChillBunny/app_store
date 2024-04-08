@@ -123,7 +123,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     padding: const EdgeInsets.all(13.0),
                     child: InkWell(
                       onTap: () {
-                        EasyLoading.show(status: 'Placing Order');
+                        //EasyLoading.show(status: 'Placing Order');
 
                         ///we want to be able to place order, but now know ,in future
                         ///

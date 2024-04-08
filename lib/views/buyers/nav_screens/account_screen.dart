@@ -1,3 +1,4 @@
+import 'package:app_store/vendor/views/screens/main_vendor_screen.dart';
 import 'package:app_store/views/buyers/auth/login_screen.dart';
 import 'package:app_store/views/buyers/inner_screens/customer_order_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -110,13 +111,16 @@ class AccountScreen extends StatelessWidget {
                     backgroundColor: Colors.yellow.shade900,
                     title: const Text(
                       'Profile',
-                      style: TextStyle(letterSpacing: 4),
+                      style: TextStyle(letterSpacing: 4, color: Colors.white),
                     ),
                     centerTitle: true,
                     actions: const [
                       Padding(
                         padding: EdgeInsets.all(14.0),
-                        child: Icon(Icons.star),
+                        child: Icon(
+                          Icons.star,
+                          color: Colors.white,
+                        ),
                       ),
                     ],
                   ),
@@ -186,24 +190,31 @@ class AccountScreen extends StatelessWidget {
                           color: Colors.grey,
                         ),
                       ),
-                      const ListTile(
-                        leading: Icon(Icons.settings),
-                        title: Text('Settings'),
+                      ListTile(
+                        leading: const Icon(Icons.settings),
+                        title: InkWell(
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(
+                                builder: (context) {
+                                  return const MainVendorScreen();
+                                },
+                              ));
+                            },
+                            child: const Text('Settings')),
                       ),
                       const ListTile(
                         leading: Icon(Icons.phone),
-                        title: Text('Phone'),
+                        title: Text('Phone*'),
                       ),
                       const ListTile(
                         leading: Icon(Icons.shop),
-                        title: Text('Cart'),
+                        title: Text('Cart*'),
                       ),
                       ListTile(
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                            return 
-                            CustomerOrderScreen();
+                            return CustomerOrderScreen();
                           }));
                         },
                         leading: const Icon(CupertinoIcons.shopping_cart),

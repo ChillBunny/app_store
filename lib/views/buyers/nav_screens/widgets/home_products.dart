@@ -48,9 +48,7 @@ class HomeproductWidget extends StatelessWidget {
                             width: 200,
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: NetworkImage(
-                                  productData['imageUrl'][0],
-                                ),
+                                image: NetworkImage(productData['imageUrl'][0]),
                                 fit: BoxFit.cover,
                               ),
                             ),
