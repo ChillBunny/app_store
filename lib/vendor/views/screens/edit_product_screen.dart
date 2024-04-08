@@ -17,7 +17,7 @@ class EditProductScreen extends StatelessWidget {
           title: const Text(
             'Manage Products',
             style: TextStyle(
-              fontSize: 30,
+              fontSize: 18,
               fontWeight: FontWeight.bold,
               letterSpacing: 7,
             ),

@@ -33,7 +33,7 @@ class UploadScreen extends StatelessWidget {
               child: Text('Shipping'),
             ),
             Tab(
-              child: Text('Attributes'),
+              child: Text('Attribute'),
             ),
             Tab(
               child: Text('Images'),

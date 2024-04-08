@@ -52,7 +52,7 @@ class AccountScreen extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
-                    'Login Account TO Access Profile',
+                    'Login Account',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -78,7 +78,7 @@ class AccountScreen extends StatelessWidget {
                     ),
                     child: const Center(
                         child: Text(
-                      'LOGIN ACCOUNT',
+                      'Login Account',
                       style: TextStyle(
                           color: Colors.white,
                           letterSpacing: 4,
